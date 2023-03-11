@@ -36,11 +36,13 @@ def infer(
                      token_ban = [0], # ban the generation of some tokens
                      token_stop = []) # stop generation whenever you see any token here
 
-    ctx = ctx.strip(' ')
-    if ctx.endswith('\n'):
-        ctx = f'\n{ctx.strip()}\n'
-    else:
-        ctx = f'\n{ctx.strip()}'
+    ctx = ctx.strip().split('\n')
+    for c in range(len(ctx)):
+        ctx[c] = ctx[c].strip().strip('\u3000').strip('\r')
+    ctx = list(filter(lambda c: c != '', ctx))
+    ctx = '\n' + ('\n'.join(ctx)).strip()
+    if ctx == '':
+        ctx = '\n'
 
     gpu_info = nvmlDeviceGetMemoryInfo(gpu_h)
     print(f'vram {gpu_info.total} used {gpu_info.used} free {gpu_info.free}')
