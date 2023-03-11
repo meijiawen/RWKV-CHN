@@ -82,7 +82,7 @@ examples = [
     ["我问智脑：“三体人发来了信息，告诉我不要回答，这是他们的阴谋吗？”", 200, 0.9, 0.8, 0.1, 0.1],
     ["我问编程之神：“Pytorch比Tensorflow更好用吗？”", 200, 0.9, 0.8, 0.1, 0.1],
     ["这竟然是", 200, 0.9, 0.85, 0.1, 0.1],
-    ["Translation\nChinese: 修道之人，最看重的是什么？\nEnglish:", 200, 0.9, 0.5, 0.1, 0.1],
+    ["Translation Samples\nChinese: 修道之人，最看重的是什么？\nEnglish:", 200, 0.9, 0.5, 0.1, 0.1],
 ]
 
 iface = gr.Interface(
