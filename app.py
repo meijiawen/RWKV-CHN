@@ -94,8 +94,8 @@ iface = gr.Interface(
     inputs=[
         gr.Textbox(lines=10, label="Prompt 输入的前文", value="以下是不朽的科幻史诗长篇巨著，描写细腻，刻画了数百位个性鲜明的英雄和宏大的星际文明战争。\n第一章"),  # prompt
         gr.Slider(10, 200, step=10, value=200, label="token_count 每次生成的长度"),  # token_count
-        gr.Slider(0.2, 2.0, step=0.1, value=1, label="temperature 默认1，高则标新立异，低则循规蹈矩"),  # temperature
-        gr.Slider(0.0, 1.0, step=0.05, value=0.8, label="top_p 默认0.8，高则变化丰富，低则保守求稳"),  # top_p
+        gr.Slider(0.2, 2.0, step=0.1, value=1, label="temperature 默认1，高则变化丰富，低则保守求稳"),  # temperature
+        gr.Slider(0.0, 1.0, step=0.05, value=0.8, label="top_p 默认0.8，高则标新立异，低则循规蹈矩"),  # top_p
         gr.Slider(0.0, 1.0, step=0.1, value=0.1, label="presencePenalty 默认0.1，避免写过的类似字"),  # presencePenalty
         gr.Slider(0.0, 1.0, step=0.1, value=0.1, label="countPenalty 默认0.1，额外避免写过多次的类似字"),  # countPenalty
     ],
