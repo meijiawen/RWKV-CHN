@@ -94,8 +94,8 @@ iface = gr.Interface(
         gr.Slider(10, 200, step=10, value=200, label="token_count，每次生成的长度"),  # token_count
         gr.Slider(0.2, 2.0, step=0.1, value=0.9, label="temperature，默认0.9，越高越标新立异，越低越循规蹈矩"),  # temperature
         gr.Slider(0.0, 1.0, step=0.05, value=0.85, label="top_p，默认0.85，越高越变化丰富，越低越循规蹈矩"),  # top_p
-        gr.Slider(0.0, 1.0, step=0.1, value=0.1, label="presencePenalty，避免已经写过的字"),  # presencePenalty
-        gr.Slider(0.0, 1.0, step=0.1, value=0.1, label="countPenalty，额外避免已经写过多次的字"),  # countPenalty
+        gr.Slider(0.0, 1.0, step=0.1, value=0.1, label="presencePenalty，默认0.1，避免写过的类似字"),  # presencePenalty
+        gr.Slider(0.0, 1.0, step=0.1, value=0.1, label="countPenalty，默认0.1，额外避免写过多次的类似字"),  # countPenalty
     ],
     outputs=gr.Textbox(label="Generated Output", lines=28),
     examples=examples,
