@@ -87,17 +87,17 @@ examples = [
 
 iface = gr.Interface(
     fn=infer,
-    description=f'''{desc} <b>请点击例子（在页面底部）</b>，可以编辑内容。这里模型只看左边输入的最后约1100字，一定要写好，标点规范，无错别字，否则电脑也会学你的错误。为避免占用资源，每次生成限制长度。可将右边内容复制到左边，然后继续生成。''',
+    description=f'''{desc} <b>请点击例子（在页面底部）</b>，可编辑内容。这里只看输入的最后约1100字，请写好，标点规范，无错别字，否则电脑会模仿你的错误。<b>为避免占用资源，每次生成限制长度。可将输出内容复制到输入，然后继续生成</b>。''',
     allow_flagging="never",
     inputs=[
-        gr.Textbox(lines=10, label="Prompt", value="以下是不朽的科幻史诗长篇巨著，描写细腻，刻画了数百位个性鲜明的英雄和宏大的星际文明战争。\n第一章"),  # prompt
-        gr.Slider(10, 200, step=10, value=200, label="token_count，每次生成的长度"),  # token_count
-        gr.Slider(0.2, 2.0, step=0.1, value=0.9, label="temperature，默认0.9，越高越标新立异，越低越循规蹈矩"),  # temperature
-        gr.Slider(0.0, 1.0, step=0.05, value=0.85, label="top_p，默认0.85，越高越变化丰富，越低越循规蹈矩"),  # top_p
-        gr.Slider(0.0, 1.0, step=0.1, value=0.1, label="presencePenalty，默认0.1，避免写过的类似字"),  # presencePenalty
-        gr.Slider(0.0, 1.0, step=0.1, value=0.1, label="countPenalty，默认0.1，额外避免写过多次的类似字"),  # countPenalty
+        gr.Textbox(lines=10, label="Prompt 输入的前文", value="以下是不朽的科幻史诗长篇巨著，描写细腻，刻画了数百位个性鲜明的英雄和宏大的星际文明战争。\n第一章"),  # prompt
+        gr.Slider(10, 200, step=10, value=200, label="token_count 每次生成的长度"),  # token_count
+        gr.Slider(0.2, 2.0, step=0.1, value=0.9, label="temperature 默认0.9，高则标新立异，低则循规蹈矩"),  # temperature
+        gr.Slider(0.0, 1.0, step=0.05, value=0.85, label="top_p 默认0.85，高则变化丰富，低则保守求稳"),  # top_p
+        gr.Slider(0.0, 1.0, step=0.1, value=0.1, label="presencePenalty 默认0.1，避免写过的类似字"),  # presencePenalty
+        gr.Slider(0.0, 1.0, step=0.1, value=0.1, label="countPenalty 默认0.1，额外避免写过多次的类似字"),  # countPenalty
     ],
-    outputs=gr.Textbox(label="Generated Output", lines=28),
+    outputs=gr.Textbox(label="Output 输出的续写", lines=28),
     examples=examples,
     cache_examples=False,
 ).queue()
