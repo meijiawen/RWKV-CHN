@@ -1,0 +1,6 @@
+-i https://pypi.douban.com/simple/
+ninja
+tokenizers
+rwkv==0.2.0
+pynvml
+huggingface_hub
