@@ -1,5 +1,8 @@
 ---
 license: Apache License 2.0
+deployspec:
+  memory: 28000
+  gpu: 1
 ---
 #### Clone with HTTP
 ```bash
