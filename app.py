@@ -5,7 +5,7 @@ from huggingface_hub import hf_hub_download
 from pynvml import *
 nvmlInit()
 gpu_h = nvmlDeviceGetHandleByIndex(0)
-ctx_limit = 2048
+ctx_limit = 2048-200
 desc = f'''链接：
 <a href='https://github.com/BlinkDL/ChatRWKV' target="_blank" style="margin:0 0.5em">ChatRWKV</a>
 <a href='https://github.com/BlinkDL/RWKV-LM' target="_blank" style="margin:0 0.5em">RWKV-LM</a>
