@@ -82,7 +82,7 @@ examples = [
 
 iface = gr.Interface(
     fn=infer,
-    description=f'''{desc} *** <b>请点击例子（在页面底部）</b>（然后可以编辑内容）。这里模型的窗口最大1200汉字（前文+续写的总长度），超过长度会逐渐变差。''',
+    description=f'''{desc} *** <b>请点击例子（在页面底部）</b>（然后可以编辑内容）。这里模型的窗口最大700汉字（前文+续写的总长度），超过长度会逐渐变差。''',
     allow_flagging="never",
     inputs=[
         gr.Textbox(lines=10, label="Prompt", value="以下是不朽的科幻史诗长篇巨著，描写细腻，刻画了数百位个性鲜明的英雄和宏大的星际文明战争。\n第一章"),  # prompt
