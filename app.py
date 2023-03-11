@@ -91,11 +91,11 @@ iface = gr.Interface(
     allow_flagging="never",
     inputs=[
         gr.Textbox(lines=10, label="Prompt", value="以下是不朽的科幻史诗长篇巨著，描写细腻，刻画了数百位个性鲜明的英雄和宏大的星际文明战争。\n第一章"),  # prompt
-        gr.Slider(10, 200, step=10, value=200),  # token_count
-        gr.Slider(0.2, 2.0, step=0.1, value=0.9),  # temperature
-        gr.Slider(0.0, 1.0, step=0.05, value=0.85),  # top_p
-        gr.Slider(0.0, 1.0, step=0.1, value=0.1),  # presencePenalty
-        gr.Slider(0.0, 1.0, step=0.1, value=0.1),  # countPenalty
+        gr.Slider(10, 200, step=10, value=200, label="token_count，每次生成的长度"),  # token_count
+        gr.Slider(0.2, 2.0, step=0.1, value=0.9, label="temperature，默认0.9，越高越混乱，越低越规矩也越无聊"),  # temperature
+        gr.Slider(0.0, 1.0, step=0.05, value=0.85, label="top_p，默认0.85，越高越变化丰富，越低越规矩也越无聊"),  # top_p
+        gr.Slider(0.0, 1.0, step=0.1, value=0.1, label="presencePenalty，避免已经写过的字"),  # presencePenalty
+        gr.Slider(0.0, 1.0, step=0.1, value=0.1, label="countPenalty，额外避免已经写过多次的字"),  # countPenalty
     ],
     outputs=gr.Textbox(label="Generated Output", lines=28),
     examples=examples,
