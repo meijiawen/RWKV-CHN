@@ -6,7 +6,7 @@ from pynvml import *
 nvmlInit()
 gpu_h = nvmlDeviceGetHandleByIndex(0)
 ctx_limit = 2048
-desc = f'''相关链接：
+desc = f'''链接：
 <a href='https://github.com/BlinkDL/ChatRWKV' target="_blank" style="margin:0 0.5em">ChatRWKV</a>
 <a href='https://github.com/BlinkDL/RWKV-LM' target="_blank" style="margin:0 0.5em">RWKV-LM</a>
 <a href="https://pypi.org/project/rwkv/" target="_blank" style="margin:0 0.5em">RWKV pip package</a>
@@ -76,19 +76,18 @@ def infer(
 examples = [
     ["以下是不朽的科幻史诗长篇巨著，描写细腻，刻画了数百位个性鲜明的英雄和宏大的星际文明战争。\n第一章", 200, 0.9, 0.85, 0.1, 0.1],
     ["“区区", 200, 0.9, 0.85, 0.1, 0.1],
-    ["这竟然是", 200, 0.9, 0.85, 0.1, 0.1],
     ["这是一个修真世界，详细世界设定如下：\n1.", 200, 0.9, 0.85, 0.1, 0.1],
     ["怎样创立一家快速盈利的AI公司：\n1.", 200, 0.9, 0.8, 0.1, 0.1],
+    ["帝皇是一名极为强大的灵能者，而且还是永生者：一个拥有无穷知识与力量以及使用它们的雄心的不朽存在。根据传说，", 200, 0.9, 0.85, 0.1, 0.1],
     ["我问智脑：“三体人发来了信息，告诉我不要回答，这是他们的阴谋吗？”", 200, 0.9, 0.8, 0.1, 0.1],
     ["我问编程之神：“Pytorch比Tensorflow更好用吗？”", 200, 0.9, 0.8, 0.1, 0.1],
-    ["帝皇是一名极为强大的灵能者，而且还是永生者：一个拥有无穷知识与力量以及使用它们的雄心的不朽存在。根据传说，", 200, 0.9, 0.85, 0.1, 0.1],
+    ["这竟然是", 200, 0.9, 0.85, 0.1, 0.1],
     ["Translation\nChinese: 修道之人，最看重的是什么？\nEnglish:", 200, 0.9, 0.5, 0.1, 0.1],
 ]
 
-
 iface = gr.Interface(
     fn=infer,
-    description=f'''{desc} <b>请点击例子（在页面底部）</b>（然后可以编辑内容）。这里模型的窗口最大1200汉字（前文+续写的总长度），超过长度会逐渐变差。''',
+    description=f'''{desc} <b>请点击例子（在页面底部）</b>，可以编辑内容。这里模型只看左边输入的最后约1200字。为避免占用资源，每次生成限制长度。可将右边内容复制到左边，然后继续生成。''',
     allow_flagging="never",
     inputs=[
         gr.Textbox(lines=10, label="Prompt", value="以下是不朽的科幻史诗长篇巨著，描写细腻，刻画了数百位个性鲜明的英雄和宏大的星际文明战争。\n第一章"),  # prompt
