@@ -69,9 +69,9 @@ def infer(
         tmp = pipeline.decode(all_tokens[out_last:])
         if '\ufffd' not in tmp:
             out_str += tmp
-            yield out_str.strip()
+            yield out_str
             out_last = i + 1
-    yield out_str.strip()
+    yield out_str
 
 examples = [
     ["以下是不朽的科幻史诗长篇巨著，描写细腻，刻画了数百位个性鲜明的英雄和宏大的星际文明战争。\n第一章", 200, 0.9, 0.85, 0.1, 0.1],
