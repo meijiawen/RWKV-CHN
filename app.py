@@ -85,6 +85,7 @@ examples = [
     ["我问编程之神：“Pytorch比Tensorflow更好用吗？”", 200, 1, 0.8, 0.1, 0.1],
     ["这竟然是", 200, 1, 0.8, 0.1, 0.1],
     ["Translation Samples\nChinese: 修道之人，最看重的是什么？\nEnglish:", 200, 1, 0.5, 0.1, 0.1],
+    ["import torch", 200, 1, 0.8, 0.1, 0.1],
 ]
 
 iface = gr.Interface(
