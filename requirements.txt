@@ -1,4 +1,3 @@
--i https://pypi.python.org/simple/
 ninja
 tokenizers
 rwkv==0.4.2
