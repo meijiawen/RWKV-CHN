@@ -1,3 +1,4 @@
+-i https://pypi.douban.com/simple/
 ninja
 tokenizers
 rwkv==0.4.2
