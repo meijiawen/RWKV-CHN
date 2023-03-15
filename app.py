@@ -114,5 +114,5 @@ demo = gr.TabbedInterface(
     [iface], ["Generative"]
 )
 
-demo.queue()
+demo.queue(max_size=5)
 demo.launch(share=False)
