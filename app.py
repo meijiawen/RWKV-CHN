@@ -1,5 +1,5 @@
 import gradio as gr
-import os
+import os, gc
 from datetime import datetime
 from huggingface_hub import hf_hub_download
 from pynvml import *
