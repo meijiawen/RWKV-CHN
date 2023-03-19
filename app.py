@@ -73,6 +73,8 @@ def infer(
             out_str += tmp
             yield out_str
             out_last = i + 1
+    gc.collect()
+    torch.cuda.empty_cache()
     yield out_str
 
 examples = [
