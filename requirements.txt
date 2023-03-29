@@ -1,6 +1,6 @@
 -i https://pypi.douban.com/simple/
 ninja
 tokenizers
-rwkv==0.7.0
+rwkv==0.7.1
 pynvml
 huggingface_hub
