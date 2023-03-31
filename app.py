@@ -45,7 +45,7 @@ def infer(
         ctx = '\n'
 
     # gpu_info = nvmlDeviceGetMemoryInfo(gpu_h)
-    # print(f'vram {gpu_info.total} used {gpu_info.used} free {gpu_info.free}')
+    # print(f'vram {gpu_info.total} used {gpu_info.used} free {gpu_info.free}',flush=True)
     
     all_tokens = []
     out_last = 0
